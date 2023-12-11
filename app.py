@@ -37,4 +37,6 @@ ibi_img.place(relx=0.5, rely=0.04, anchor="n")
 etiquita_logo = Label(home, text="G    R    U    P    O", bg="black", fg="white")
 etiquita_logo.place(relx=0.5, rely=0.02, anchor="n")
 
+boton_mb51 = Button(home, text="", bg="", command=)
+
 home.mainloop()
