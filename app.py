@@ -26,8 +26,16 @@ home.resizable(False,False)
 canvas = Canvas(home,width=800, height=600)
 canvas.pack()
 
-
+# Parte superior negra #
 canvas.create_rectangle(0,0,800,90, fill="black")
+
+# logo # 
+img = PhotoImage(file="Logos/uma-logo.png")
+ibi_img = Label(home,image=img, bg="black")
+ibi_img.place(relx=0.5, rely=0.04, anchor="n")
+
+etiquita_logo = Label(home, text="G    R    U    P    O", bg="black", fg="white")
+etiquita_logo.place(relx=0.5, rely=0.02, anchor="n")
 
 
 home.mainloop()
