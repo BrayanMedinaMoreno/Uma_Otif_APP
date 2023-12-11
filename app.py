@@ -17,7 +17,6 @@ def abrir_principal():
 
 
 ### Interfaz // Inicio ###
-
 home = Tk()
 home.title("OTIF APP")
 home.geometry("800x600")
@@ -34,8 +33,8 @@ img = PhotoImage(file="Logos/uma-logo.png")
 ibi_img = Label(home,image=img, bg="black")
 ibi_img.place(relx=0.5, rely=0.04, anchor="n")
 
+# texto sobre el logo #
 etiquita_logo = Label(home, text="G    R    U    P    O", bg="black", fg="white")
 etiquita_logo.place(relx=0.5, rely=0.02, anchor="n")
-
 
 home.mainloop()
