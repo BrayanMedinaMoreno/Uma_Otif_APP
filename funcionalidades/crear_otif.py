@@ -24,7 +24,7 @@ def creacion_otif(otif_create_file):
             plantilla.loc[index, "Texto breve"] = row["Texto breve"]
             plantilla.loc[index, "Precio neto"] = row["Precio neto"]
             plantilla.loc[index, "Cantidad de pedido"] = row["Cantidad de pedido"]
-            plantilla.loc[index, "Cantidad de reparto"] = row["Cantidad de reparto"]  
+        #    plantilla.loc[index, "Cantidad de reparto"] = row["Cantidad de reparto"]  
 
         file_path = filedialog.asksaveasfilename(defaultextension=".xlsx", filetypes=[("Excel files", "*.xlsx")])
         if not file_path:
