@@ -1,5 +1,7 @@
 from tkinter import *
+from tkinter import filedialog, messagebox
 import pandas as pd 
+from funcionalidades.crear_otif import creacion_otif
 
 ### Variables globales ###
 
@@ -10,11 +12,20 @@ otiftime_file = ""
 mb51 = ""
 otif_entradas = ""
 
-### Manejo // Ventanas // FunOcultar ###
+def abrir_archivo_export():
+    global otif_create_file
+    otif_create_file = filedialog.askopenfilename()
+    if otif_create_file:
+        messagebox.showinfo("Archivo seleccionado", f"Has seleccionado: {otif_create_file}")
+    else:
+        messagebox.showwarning("Advertencia", "No se seleccionó ningún archivo.")
 
-def abrir_principal():
-        home.withdraw()
-
+def combinar_archivos_export():
+    if not otif_create_file:
+        messagebox.showwarning("Advertencia", "si.")
+        return
+    else:
+        creacion_otif(otif_create_file)
 
 ### Interfaz // Inicio ###
 home = Tk()
@@ -37,6 +48,7 @@ ibi_img.place(relx=0.5, rely=0.04, anchor="n")
 etiquita_logo = Label(home, text="G    R    U    P    O", bg="black", fg="white")
 etiquita_logo.place(relx=0.5, rely=0.02, anchor="n")
 
-boton_mb51 = Button(home, text="", bg="", command=)
+boton_mb51 = Button(home, text="Seleccionar archivo export", bg="#fafafc", command=abrir_archivo_export)
+boton_generar_otif = Button(home, text="Generar", bg="#fafafc", command=combinar_archivos_export)
 
 home.mainloop()
