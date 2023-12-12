@@ -11,7 +11,7 @@ def creacion_otif(otif_create_file):
         print(datos_a_llenar.head())
 
         print("Leyendo plantilla...")
-        plantilla = pd.read_excel("/plantilla/otif.xlsx")
+        plantilla = pd.read_excel("plantilla/otif.xlsx")
         print(plantilla)
 
 
@@ -34,7 +34,7 @@ def creacion_otif(otif_create_file):
         print("Guardando archivo en:", file_path)
         plantilla.to_excel(file_path, index=False)
         print("Archivo guardado correctamente.")
-        
+
     except Exception as e:
         messagebox.showerror("Error", str(e))
 

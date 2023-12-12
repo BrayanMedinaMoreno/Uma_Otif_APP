@@ -51,4 +51,6 @@ etiquita_logo.place(relx=0.5, rely=0.02, anchor="n")
 boton_mb51 = Button(home, text="Seleccionar archivo export", bg="#fafafc", command=abrir_archivo_export)
 boton_generar_otif = Button(home, text="Generar", bg="#fafafc", command=combinar_archivos_export)
 
+boton_mb51.place(relx=0.20, rely=0.5, anchor="center")
+boton_generar_otif.place(relx=0.20, rely=0.7, anchor="center")
 home.mainloop()
