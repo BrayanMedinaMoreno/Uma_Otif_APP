@@ -26,9 +26,15 @@ def creacion_otif(otif_create_file):
             plantilla.loc[index, "Cantidad de pedido"] = row["Cantidad de pedido"]
             plantilla.loc[index, "Cantidad de reparto"] = row["Cantidad de reparto"]  
 
-        file_path = filedialog.asksaveasfilename(defaultextension=".xlsx", filetypes=)
-
-    
+        file_path = filedialog.asksaveasfilename(defaultextension=".xlsx", filetypes=[("Excel files", "*.xlsx")])
+        if not file_path:
+            print("No se ha seleccionado una ubicación para guardar el archivo.")
+            return    
+            
+        print("Guardando archivo en:", file_path)
+        plantilla.to_excel(file_path, index=False)
+        print("Archivo guardado correctamente.")
+        
     except Exception as e:
         messagebox.showerror("Error", str(e))
 
