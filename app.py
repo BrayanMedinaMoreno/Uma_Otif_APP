@@ -1,31 +1,7 @@
 from tkinter import *
-from tkinter import filedialog, messagebox
 import pandas as pd 
-from funcionalidades.crear_otif import creacion_otif
+from funcionalidades.botones import carga_archivo_export,combinar_archivos
 
-### Variables globales ###
-
-export_file = ""
-otif_file = ""
-otif_create_file = ""
-otiftime_file = ""
-mb51 = ""
-otif_entradas = ""
-
-def abrir_archivo_export():
-    global otif_create_file
-    otif_create_file = filedialog.askopenfilename()
-    if otif_create_file:
-        messagebox.showinfo("Archivo seleccionado", f"Has seleccionado: {otif_create_file}")
-    else:
-        messagebox.showwarning("Advertencia", "No se seleccionó ningún archivo.")
-
-def combinar_archivos_export():
-    if not otif_create_file:
-        messagebox.showwarning("Advertencia", "si.")
-        return
-    else:
-        creacion_otif(otif_create_file)
 
 ### Interfaz // Inicio ###
 home = Tk()
@@ -40,16 +16,16 @@ canvas.pack()
 canvas.create_rectangle(0,0,800,90, fill="black")
 
 # logo # 
-img = PhotoImage(file="Logos/uma-logo.png")
-ibi_img = Label(home,image=img, bg="black")
-ibi_img.place(relx=0.5, rely=0.04, anchor="n")
+logo = PhotoImage(file="Logos/uma-logo.png")
+color_logo = Label(home,image=logo, bg="black")
+color_logo.place(relx=0.5, rely=0.04, anchor="n")
 
 # texto sobre el logo #
-etiquita_logo = Label(home, text="G    R    U    P    O", bg="black", fg="white")
-etiquita_logo.place(relx=0.5, rely=0.02, anchor="n")
+etiquita_texto_logo = Label(home, text="G    R    U    P    O", bg="black", fg="white")
+etiquita_texto_logo.place(relx=0.5, rely=0.02, anchor="n")
 
-boton_mb51 = Button(home, text="Seleccionar archivo export", bg="#fafafc", command=abrir_archivo_export)
-boton_generar_otif = Button(home, text="Generar", bg="#fafafc", command=combinar_archivos_export)
+boton_mb51 = Button(home, text="Seleccionar archivo export", bg="#fafafc", command=carga_archivo_export)
+boton_generar_otif = Button(home, text="Generar", bg="#fafafc", command=combinar_archivos)
 
 boton_mb51.place(relx=0.20, rely=0.5, anchor="center")
 boton_generar_otif.place(relx=0.20, rely=0.7, anchor="center")

@@ -1,13 +1,13 @@
 import pandas as pd
 from tkinter import filedialog, messagebox
 
-def creacion_otif(otif_create_file):
-    if not otif_create_file:
+def fun_crear_otif(export_data):
+    if not export_data:
         messagebox.showwarning("Advertencia", "Debe seleccionar el archivo mb51 para continuar")
         return
     try:
         print("Letendo datos del archivo de entrada...")
-        datos_a_llenar = pd.read_excel(otif_create_file)
+        datos_a_llenar = pd.read_excel(export_data)
         print(datos_a_llenar.head())
 
         print("Leyendo plantilla...")
@@ -24,7 +24,7 @@ def creacion_otif(otif_create_file):
             plantilla.loc[index, "Texto breve"] = row["Texto breve"]
             plantilla.loc[index, "Precio neto"] = row["Precio neto"]
             plantilla.loc[index, "Cantidad de pedido"] = row["Cantidad de pedido"]
-        #    plantilla.loc[index, "Cantidad de reparto"] = row["Cantidad de reparto"]  
+       #     plantilla.loc[index, "Cantidad de reparto"] = row["Cantidad de reparto"]  
 
         file_path = filedialog.asksaveasfilename(defaultextension=".xlsx", filetypes=[("Excel files", "*.xlsx")])
         if not file_path:
