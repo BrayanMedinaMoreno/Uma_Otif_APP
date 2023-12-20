@@ -28,10 +28,18 @@ etiquita_texto_logo.place(relx=0.5, rely=0.02, anchor="n")
 # texto sobre los botones #
 etiquita_texto_botones_crear_otif = Label(home, text="Crear Otif Primer Paso", fg="black")
 etiquita_texto_botones_crear_otif.place(relx=0.15, rely=0.19, anchor="center")
+# Texto sobre los botones fechas#
+etiquita_texto_boton_fechas= Label(home, text="Calcular las fechas", fg="black" ) 
 
-# botones #
-boton_mb51 = Button(home, text="Seleccionar archivo export", bg="#fafafc", command=carga_archivo_export)
+## botones ##
+# crear otif #
+boton_export = Button(home, text="Seleccionar archivo export", bg="#fafafc", command=carga_archivo_export)
 boton_generar_otif = Button(home, text="Generar", bg="#fafafc", command=combinar_archivos)
-boton_mb51.place(relx=0.15, rely=0.23, anchor="center")
+boton_export.place(relx=0.15, rely=0.23, anchor="center")
 boton_generar_otif.place(relx=0.15, rely=0.29, anchor="center")
+# update otif #
+boton_mb51 = Button(home, text="Seleccionar archivo mb51",fg="black")
+boton_otif = Button(home, text="Seleccionar archivo otif",fg="black")
+
+
 home.mainloop()
