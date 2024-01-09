@@ -1,5 +1,6 @@
 from tkinter import filedialog, messagebox
 from funcionalidades.crear_otif import fun_crear_otif
+from funcionalidades.calculofechas import calculo_tiempo
 
 # Creación otif #
 def carga_archivo_export():
@@ -34,3 +35,20 @@ def cargar_archivo_otif():
         messagebox.showinfo("Archivo seleccionado", f"Has seleccionado: {otif_data}")
     else:
         messagebox.showwarning("Advertencia", "No se seleccionó ningún archivo.")
+
+# fechas #
+
+def abrir_otiftime():
+    global otiftime_file
+    otiftime_file = filedialog.askopenfilename()
+    if otiftime_file:
+        messagebox.showinfo("Archivo seleccionado", f"Has seleccionado: {otiftime_file}")
+    else:
+        messagebox.showwarning("Advertencia", "No se seleccionó ningún archivo.")
+
+def combinar_otiftime():
+    if not otiftime_file:
+        messagebox.showwarning("Advertencia", "Debes seleccionar el archivo")
+        return
+    else: 
+        calculo_tiempo(otiftime_file)
