@@ -13,16 +13,27 @@ def calculo_tiempo(fecha_propuesta):
     df["Lead Time"] = pd.to_numeric(df["Lead Time"], errors="coerce")
 
     dias_no_habiles =[
-        datetime(2023, 1, 1), datetime(2023, 1, 9),       # Enero 
-        datetime(2023, 3, 20),                            # Marzo 
-        datetime(2023, 4, 6), datetime(2023, 4, 7),       # Abril 
-        datetime(2023, 5, 1), datetime(2023, 5, 22),      # Mayo  
-        datetime(2023, 6, 12), datetime(2023, 6, 19),     # Junio
-        datetime(2023, 7, 3), datetime(2023, 7, 20),      # Julio
-        datetime(2023, 8, 7), datetime(2023, 8, 21),      # Agosto
-        datetime(2023, 10, 16),                           # Octubre
-        datetime(2023, 11, 6), datetime(2023, 11, 13),    # Noviembre
-        datetime(2023, 12, 8), datetime(2023, 12, 25),     # Diciembre
+        datetime(2024, 1, 1), datetime(2024, 1, 9),       # Enero 
+        datetime(2024, 3, 20),                            # Marzo 
+        datetime(2024, 4, 6), datetime(2024, 4, 7),       # Abril 
+        datetime(2024, 5, 1), datetime(2024, 5, 22),      # Mayo  
+        datetime(2024, 6, 12), datetime(2024, 6, 19),     # Junio
+        datetime(2024, 7, 3), datetime(2024, 7, 20),      # Julio
+        datetime(2024, 8, 7), datetime(2024, 8, 21),      # Agosto
+        datetime(2024, 10, 16),                           # Octubre
+        datetime(2024, 11, 6), datetime(2024, 11, 13),    # Noviembre
+        datetime(2024, 12, 8), datetime(2024, 12, 25),    # Diciembre
+
+        datetime(2025, 1, 1), datetime(2025, 1, 9),       # Enero 
+        datetime(2025, 3, 20),                            # Marzo 
+        datetime(2025, 4, 6), datetime(2025, 4, 7),       # Abril 
+        datetime(2025, 5, 1), datetime(2025, 5, 22),      # Mayo  
+        datetime(2025, 6, 12), datetime(2025, 6, 19),     # Junio
+        datetime(2025, 7, 3), datetime(2025, 7, 20),      # Julio
+        datetime(2025, 8, 7), datetime(2025, 8, 21),      # Agosto
+        datetime(2025, 10, 16),                           # Octubre
+        datetime(2025, 11, 6), datetime(2025, 11, 13),    # Noviembre
+        datetime(2025, 12, 8), datetime(2025, 12, 25),    # Diciembre
     ]
     
     def no_dias_habiles(fecha):
