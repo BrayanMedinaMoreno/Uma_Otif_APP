@@ -8,7 +8,9 @@ def calculo_tiempo(fecha_propuesta):
         return
     
     df = pd.read_excel(fecha_propuesta)
-
+    print("Nombre columnas")
+    print(df.columns)
+    print("continuar.....")
     df["fecha entrega CKD"] = pd.to_datetime(df["fecha entrega CKD"], format="%d-%m-%y")
     df["Lead Time"] = pd.to_numeric(df["Lead Time"], errors="coerce")
 
@@ -52,6 +54,8 @@ def calculo_tiempo(fecha_propuesta):
 
         return fecha_actual
     
+    df["NuevaFecha"] = df.apply(calculo_de_fecha, axis=1)
+
     df["Fecha de entrega Propuesta"] = df["NuevaFecha"]
 
     df.drop("NuevaFecha", axis=1, inplace=True)
